@@ -1,0 +1,5 @@
+Diogo Medeiros;19;70633
+Pedro Silva;20;70649
+João Rodrigues;20;70579
+Eduardo Chaves;20;70611
+Rui Pinto;20;70648
