@@ -1,4 +1,4 @@
-// Resolução do exercício 2.4
+// ResoluÃ§Ã£o do exercÃ­cio 2.4
 
 #include <iostream>
 #include <fstream>
@@ -25,10 +25,10 @@ int main()
         {
             getline(file, tmp.nome, ';');
             file >> tmp.idade >> delim;
-            file >> tmp.numero >> ws;
+            file >> tmp.numero >> ws; // ws (whitespace) - manipulador de entrada para ler espaï¿½os, mudanï¿½as de linha, etc.
             cout << "Nome: " << tmp.nome << endl;
             cout << "Idade: " << tmp.idade << endl;
-            cout << "Número: " << tmp.numero << endl;
+            cout << "NÃºmero: " << tmp.numero << endl;
         }
         file.close();
         return 0;
