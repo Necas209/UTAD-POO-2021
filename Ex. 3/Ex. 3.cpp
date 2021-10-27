@@ -26,14 +26,14 @@ int main(int argc, char* argv[])
 	d1.SetAno(ano);
 	// Atualização da data d2 usando o método Update
 	d2.Update(18, 10, 2021);
-	// Leitura da data d3 a partir do teclado, usando o operador >>
+	// Leitura da data d3 a partir do teclado, usando a sobrecarga do operador '>>'
 	cout << "Data 3: ";
 	cin >> d3;
-	// Apresentação das datas, usando o operador <<
+	// Apresentação das datas, usando a sobrecarga do operador '<<'
 	cout << "Data 1: " << d1 << endl;
 	cout << "Data 2: " << d2 << endl;
 	cout << "Data 3: " << d3 << endl;
-	// Leitura e escrita nos ficheiros usando ReadFile e SaveFile
+	// Leitura e escrita nos ficheiros, usando ReadFile e SaveFile
 	ifs.open("data_input.txt");
 	if (!ifs.is_open())
 	{
@@ -52,4 +52,8 @@ int main(int argc, char* argv[])
 	d4.SaveFile(ofs);
 	ofs.close();
 	return 0;
+
+	//
+	cout << d4.GetDia() << d4.GetMes() << d4.GetAno();
+	cout << d4 << d1;
 }
