@@ -56,6 +56,17 @@ bool Data::operator!=(const Data& D)
 	return !(*this == D);
 }
 
+bool Data::operator<(const Data& D)
+{
+	if (ano < D.ano)
+		return true;
+	else if (ano == D.ano && mes < D.mes)
+		return true;
+	else if (ano == D.ano && mes == D.mes && dia < D.dia)
+		return true;
+	return false;
+}
+
 ostream& operator<<(ostream& os, const Data& D)
 {
 	os << D.dia << Data::delim << D.mes << Data::delim << D.ano;
@@ -64,7 +75,7 @@ ostream& operator<<(ostream& os, const Data& D)
 
 istream& operator>>(istream& is, Data& D)
 {
-	char delim; 
+	char delim;
 	is >> D.dia >> delim >> D.mes >> delim >> D.ano;
 	return is;
 }

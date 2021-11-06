@@ -1,4 +1,3 @@
-#pragma once
 #define _CRT_SECURE_NO_WARNINGS
 #include <ctime> // livraria que inclui funcoes de tempo
 #include <iostream>
@@ -30,6 +29,7 @@ public:
 	void SaveFile(ofstream& ofs);
 	bool operator==(const Data& D);
 	bool operator!=(const Data& D);
+	bool operator<(const Data& D);
 	friend ostream& operator<<(ostream& os, const Data& D);
 	friend istream& operator>> (istream& is, Data& D);
 };
