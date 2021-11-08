@@ -2,8 +2,8 @@
 
 Data::Data()
 {
-	time_t now = time(0);
-	tm* ltm = localtime(&now);
+	time_t now = time(0); // instante atual
+	tm* ltm = localtime(&now); // tm -> estrutura que representa data/hora de calendário
 	dia = ltm->tm_mday; // tm_mday = dia do mês
 	mes = 1 + ltm->tm_mon; // tm_mon = n.º de meses desde Jan.
 	ano = 1900 + ltm->tm_year; // tm_year = n.º de anos desde 1900
