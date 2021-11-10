@@ -1,4 +1,3 @@
-#pragma once
 #include "../Ex. 3/Data.h"
 #include <iostream>
 #include <fstream>
@@ -24,7 +23,7 @@ public:
 	string GetMorada(void) { return morada; }
 	void Show(void);
 	void ReadK(void);
-	void MaisNovo(const Pessoa& P);
+	void MaisNovo(Pessoa& P);
 	void ReadFile(ifstream& ifs);
 	void SaveFile(ofstream& ofs);
 	bool operator==(const Pessoa& P);

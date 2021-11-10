@@ -34,6 +34,8 @@ public:
 	bool operator>(const Data& D);
 	bool operator<=(const Data& D);
 	bool operator>=(const Data& D);
+	Data& operator++(void);
+	Data& operator++(int);
 	friend ostream& operator<<(ostream& os, const Data& D);
 	friend istream& operator>> (istream& is, Data& D);
 };

@@ -32,19 +32,22 @@ void Pessoa::ReadK(void)
 	getline(cin, morada);
 }
 
-void Pessoa::MaisNovo(const Pessoa& P)
+void Pessoa::MaisNovo(Pessoa& P)
 {
-	if (dataN == P.dataN)
+	cout << "Pessoa mais nova: " << endl;
+	// overload dos operadores '>'e '<' na classe Data
+	if (dataN > P.dataN)
+	{
+		Show();
+	}
+	else if (P.dataN > dataN)
+	{
+		P.Show();
+	}
+	else
 	{
 		cout << "As duas pessoas têm a mesma idade." << endl;
-		return;
 	}
-	cout << "Pessoa mais nova: ";
-	if (dataN < P.dataN) // overload do operador '<' na classe Data
-	{
-		cout << "Pessoa mais nova: " << *this;
-	}
-	else cout << "Pessoa mais nova: " << P;
 }
 
 void Pessoa::ReadFile(ifstream& ifs)

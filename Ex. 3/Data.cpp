@@ -88,6 +88,20 @@ bool Data::operator>=(const Data& D)
 	return !(*this < D);
 }
 
+Data& Data::operator++(void)
+{
+	++dia;
+	return *this;
+}
+
+Data& Data::operator++(int)
+{
+	Data temp;
+	temp = *this;
+	++(*this);
+	return temp;
+}
+
 ostream& operator<<(ostream& os, const Data& D)
 {
 	os << D.dia << Data::delim << D.mes << Data::delim << D.ano;
