@@ -3,7 +3,7 @@
 Data::Data()
 {
 	time_t now = time(0); // instante atual
-	tm* ltm = localtime(&now); // tm -> estrutura que representa data/hora de calendário
+	tm* ltm = localtime(&now); // tm -> estrutura que representa data/hora do calendário
 	dia = ltm->tm_mday; // tm_mday = dia do mês
 	mes = 1 + ltm->tm_mon; // tm_mon = n.º de meses desde Jan.
 	ano = 1900 + ltm->tm_year; // tm_year = n.º de anos desde 1900
@@ -65,6 +65,27 @@ bool Data::operator<(const Data& D)
 	else if (ano == D.ano && mes == D.mes && dia < D.dia)
 		return true;
 	return false;
+}
+
+bool Data::operator>(const Data& D)
+{
+	if (ano > D.ano)
+		return true;
+	else if (ano == D.ano && mes > D.mes)
+		return true;
+	else if (ano == D.ano && mes == D.mes && dia > D.dia)
+		return true;
+	return false;
+}
+
+bool Data::operator<=(const Data& D)
+{
+	return !(*this > D);
+}
+
+bool Data::operator>=(const Data& D)
+{
+	return !(*this < D);
 }
 
 ostream& operator<<(ostream& os, const Data& D)

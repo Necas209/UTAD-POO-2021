@@ -8,7 +8,8 @@ using namespace std;
 class Data
 {
 private:
-	const static char delim = '/'; // delimitador da data, por ex., ':' ou '/'
+	// delimitador da data, por ex., ':' ou '/'
+	static const char delim = '/';
 	int dia;
 	int mes;
 	int ano;
@@ -30,6 +31,10 @@ public:
 	bool operator==(const Data& D);
 	bool operator!=(const Data& D);
 	bool operator<(const Data& D);
+	bool operator>(const Data& D);
+	bool operator<=(const Data& D);
+	bool operator>=(const Data& D);
 	friend ostream& operator<<(ostream& os, const Data& D);
 	friend istream& operator>> (istream& is, Data& D);
 };
+
