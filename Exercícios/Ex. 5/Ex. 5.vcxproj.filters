@@ -15,10 +15,13 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Ex. 4.cpp">
+    <ClCompile Include="Ex. 5.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Pessoa.cpp">
+    <ClCompile Include="..\Ex. 4\Pessoa.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Funcionario.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\Ex. 3\Data.cpp">
@@ -26,7 +29,10 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Pessoa.h">
+    <ClInclude Include="..\Ex. 4\Pessoa.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Funcionario.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\Ex. 3\Data.h">

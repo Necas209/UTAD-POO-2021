@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{dddb3223-ca37-4324-8d67-b789eee69332}</ProjectGuid>
-    <RootNamespace>Ex4</RootNamespace>
+    <ProjectGuid>{5653ee66-f69a-468b-a7ac-9062c17f4b2a}</ProjectGuid>
+    <RootNamespace>Freq17112018</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -139,13 +139,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\Ex. 3\Data.cpp" />
-    <ClCompile Include="Ex. 4.cpp" />
-    <ClCompile Include="Pessoa.cpp" />
+    <ClCompile Include="..\..\UTAD-POO-2021\Exercícios\Ex. 3\Data.cpp" />
+    <ClCompile Include="Conta.cpp" />
+    <ClCompile Include="Freq. 1 7.11.2018.cpp" />
+    <ClCompile Include="Titular.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\Ex. 3\Data.h" />
-    <ClInclude Include="Pessoa.h" />
+    <ClInclude Include="..\..\UTAD-POO-2021\Exercícios\Ex. 3\Data.h" />
+    <ClInclude Include="Conta.h" />
+    <ClInclude Include="Titular.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
