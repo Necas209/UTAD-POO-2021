@@ -20,9 +20,9 @@ public:
 	void SetDia(int dia) { this->dia = dia; }
 	void SetMes(int mes) { this->mes = mes; }
 	void SetAno(int ano) { this->ano = ano; }
-	int GetDia(void) { return dia; }
-	int GetMes(void) { return mes; }
-	int GetAno(void) { return ano; }
+	int GetDia(void) const { return dia; }
+	int GetMes(void) const { return mes; }
+	int GetAno(void) const { return ano; }
 	void Show(void);
 	void Update(int dia, int mes, int ano);
 	bool Igual(Data D);

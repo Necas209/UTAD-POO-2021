@@ -81,19 +81,18 @@ bool Pessoa::operator!=(const Pessoa& P)
 ostream& operator<<(ostream& os, const Pessoa& P)
 {
 	os << "Nome: " << P.nome << endl;
-	os << "Data: " << P.dataN << endl;
 	os << "Morada: " << P.morada << endl;
+	os << "Data: " << P.dataN << endl;
 	return os;
 }
 
 istream& operator>>(istream& is, Pessoa& P)
 {
-	// cout << "Nome: ";
+	cout << "Nome: ";
 	getline(is, P.nome);
-	// cout << "Data: ";
-	is >> P.dataN;
-	is.ignore();
-	// cout << "Data: ";
+	cout << "Morada: ";
 	getline(is, P.morada);
+	cout << "Data: ";
+	is >> P.dataN;
 	return is;
 }

@@ -20,3 +20,22 @@ void Funcionario::Show(void)
 	cout << "Numero: " << num_Func << endl;
 	cout << "Setor: " << setor << endl;
 }
+
+ostream& operator<<(ostream& os, const Funcionario& F)
+{
+	os << (Pessoa&)F;
+	os << "Setor: " << F.setor << endl;
+	os << "Numero: " << F.num_Func << endl;
+	return os;
+}
+
+istream& operator>>(istream& is, Funcionario& F)
+{
+	is >> (Pessoa&)F;
+	is.ignore();
+	cout << "Setor: ";
+	getline(is, F.setor);
+	cout << "Numero: ";
+	is >> F.num_Func;
+	return is;
+}

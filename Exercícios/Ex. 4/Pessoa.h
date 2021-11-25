@@ -12,22 +12,29 @@ private:
 	Data dataN;
 	string morada;
 public:
+	// Construtores (defeito e com parâmetros) e Destrutor
 	Pessoa();
 	Pessoa(string nome, Data dataN, string morada);
-	~Pessoa();
+	virtual ~Pessoa();
+	
+	// Métodos de Acesso: Setters e Getters
 	void SetNome(string nome) { this->nome = nome; }
 	void SetDataN(Data dataN) { this->dataN = dataN; }
 	void SetMorada(string morada) { this->morada = morada; }
-	string GetNome(void) { return nome; }
-	Data GetDataN(void) { return dataN; }
-	string GetMorada(void) { return morada; }
-	void Show(void);
-	void ReadK(void);
+	string GetNome(void) const { return nome; }
+	Data GetDataN(void) const { return dataN; }
+	string GetMorada(void) const { return morada; }
+	
+	// Outros Métodos
+	virtual void Show(void);
+	virtual void ReadK(void);
 	void MaisNovo(Pessoa& P);
-	void ReadFile(ifstream& ifs);
-	void SaveFile(ofstream& ofs);
-	bool operator==(const Pessoa& P);
-	bool operator!= (const Pessoa& P);
+	virtual void ReadFile(ifstream& ifs);
+	virtual void SaveFile(ofstream& ofs);
+	
+	// Sobrecarga de Operadores
+	virtual bool operator==(const Pessoa& P);
+	virtual bool operator!= (const Pessoa& P);
 	friend ostream& operator<<(ostream& os, const Pessoa& P);
 	friend istream& operator>>(istream& is, Pessoa& P);
 };
