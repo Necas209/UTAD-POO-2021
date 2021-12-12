@@ -24,6 +24,8 @@ public:
 
 	// Outros Métodos
 	virtual void Show(void);
+	virtual void ReadFile(ifstream& ifs);
+	virtual void SaveFile(ofstream& ofs);
 
 	// Sobrecarga de Operadores
 	friend ostream& operator<<(ostream& os, const Funcionario& F);

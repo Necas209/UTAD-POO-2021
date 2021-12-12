@@ -112,5 +112,6 @@ istream& operator>>(istream& is, Data& D)
 {
 	char delim;
 	is >> D.dia >> delim >> D.mes >> delim >> D.ano;
+	is.ignore(); // ignorar Enter (ou '\n')
 	return is;
 }

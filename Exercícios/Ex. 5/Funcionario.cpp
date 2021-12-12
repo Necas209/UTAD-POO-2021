@@ -21,6 +21,21 @@ void Funcionario::Show(void)
 	cout << "Setor: " << setor << endl;
 }
 
+void Funcionario::ReadFile(ifstream& ifs)
+{
+	Pessoa::ReadFile(ifs);
+	ifs >> num_Func;
+	ifs.ignore(); // ignorar ';'
+	getline(ifs, setor, ';');
+}
+
+void Funcionario::SaveFile(ofstream& ofs)
+{
+	Pessoa::SaveFile(ofs);
+	ofs << num_Func << ';';
+	ofs << setor << ';';
+}
+
 ostream& operator<<(ostream& os, const Funcionario& F)
 {
 	os << (Pessoa&)F;
@@ -32,10 +47,10 @@ ostream& operator<<(ostream& os, const Funcionario& F)
 istream& operator>>(istream& is, Funcionario& F)
 {
 	is >> (Pessoa&)F;
-	is.ignore();
 	cout << "Setor: ";
 	getline(is, F.setor);
 	cout << "Numero: ";
 	is >> F.num_Func;
+	is.ignore();
 	return is;
 }

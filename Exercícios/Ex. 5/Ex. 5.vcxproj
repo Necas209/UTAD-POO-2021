@@ -149,6 +149,9 @@
     <ClInclude Include="..\Ex. 4\Pessoa.h" />
     <ClInclude Include="Funcionario.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="funcionarios.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
