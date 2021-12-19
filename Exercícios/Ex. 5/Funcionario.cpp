@@ -3,11 +3,17 @@
 Funcionario::Funcionario()
 	:num_Func(0), setor("")
 {
+	ord_base = 0;
+	h_extra = 0;
+	p_hora_extra = 0;
 }
 
-Funcionario::Funcionario(string nome, Data dataN, string morada, int num_Func, string setor)
+Funcionario::Funcionario(string nome, Data dataN, string morada, int num_Func, string setor, float ord_base, int h_extra, float p_hora_extra)
 	:Pessoa(nome, dataN, morada), num_Func(num_Func), setor(setor)
 {
+	this->ord_base = ord_base;
+	this->h_extra = h_extra;
+	this->p_hora_extra = p_hora_extra;
 }
 
 Funcionario::~Funcionario()

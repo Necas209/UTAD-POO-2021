@@ -60,7 +60,7 @@ int main()
     // 5.13
     Funcionario v[4];
     ifstream ifs;
-
+    
     ifs.open(filename);
     if (ifs.is_open())
     {
@@ -76,7 +76,7 @@ int main()
         cout << "ERRO na abertura do ficheiro " << filename << endl;
         exit(1);
     }
-
+    
     // 5.14
     SortByDate(v);
     //for (auto& f : v) 

@@ -1,4 +1,6 @@
 #include "../Ex. 3/Data.h"
+#pragma once
+
 #include <iostream>
 #include <fstream>
 #include <string>
