@@ -25,10 +25,11 @@ void Pessoa::ReadK(void)
 {
 	cout << "Nome: ";
 	getline(cin, nome);
+
 	cout << "Data: ";
 	cin >> dataN;
+
 	cout << "Morada: ";
-	cin.ignore();
 	getline(cin, morada);
 }
 
@@ -53,24 +54,26 @@ void Pessoa::MaisNovo(Pessoa& P)
 void Pessoa::ReadFile(ifstream& ifs)
 {
 	getline(ifs, nome, ';');
+
 	dataN.ReadFile(ifs);
 	ifs.ignore(); // ignorar o ';'
+
 	getline(ifs, morada, ';');
 }
 
 void Pessoa::SaveFile(ofstream& ofs)
 {
 	ofs << nome << ';';
+
 	dataN.SaveFile(ofs);
 	ofs << ';';
+
 	ofs << morada << ';';
 }
 
 bool Pessoa::operator==(const Pessoa& P)
 {
-	return (nome == P.nome
-		&& dataN == P.dataN
-		/*&& morada == P.morada*/);
+	return (nome == P.nome && dataN == P.dataN);
 }
 
 bool Pessoa::operator!=(const Pessoa& P)

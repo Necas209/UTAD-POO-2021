@@ -37,10 +37,10 @@ public:
 
 	// Outros Métodos
 	virtual void Show(void);
+	virtual void ReadK(void);
 	virtual void ReadFile(ifstream& ifs);
 	virtual void SaveFile(ofstream& ofs);
 	virtual float CalculaOrdenado() = 0;
-
 
 	// Sobrecarga de Operadores
 	friend ostream& operator<<(ostream& os, const Funcionario& F);

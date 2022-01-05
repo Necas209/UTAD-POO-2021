@@ -153,6 +153,9 @@
     <ClInclude Include="Administrativo.h" />
     <ClInclude Include="Operario.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="Funcionarios.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
