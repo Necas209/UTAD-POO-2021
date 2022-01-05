@@ -17,6 +17,10 @@ public:
     void SetF_Turno(bool f) { f_turno = f; }
     bool GetF_turno(void) const { return f_turno; }
 
+    virtual void Show(void);
+    virtual void ReadK(void);
+    virtual void ReadFile(ifstream& ifs);
+    virtual void SaveFile(ofstream& ofs);
     virtual float CalculaOrdenado();
 };
 

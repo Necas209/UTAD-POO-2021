@@ -11,6 +11,10 @@ public:
         , float ord_base, int h_extra);
     virtual ~Administrativo();
 
+    virtual void Show(void);
+    virtual void ReadK(void);
+    virtual void ReadFile(ifstream& ifs);
+    virtual void SaveFile(ofstream& ofs);
     virtual float CalculaOrdenado();
 };
 

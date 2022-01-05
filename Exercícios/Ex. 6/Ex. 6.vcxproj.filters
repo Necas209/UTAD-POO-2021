@@ -33,6 +33,9 @@
     <ClCompile Include="Administrativo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="GestorFunc.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Ex. 5\Funcionario.h">
@@ -50,9 +53,18 @@
     <ClInclude Include="Administrativo.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="GestorFunc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="Funcionarios.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="Administrativos.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="Operarios.txt">
       <Filter>Resource Files</Filter>
     </Text>
   </ItemGroup>

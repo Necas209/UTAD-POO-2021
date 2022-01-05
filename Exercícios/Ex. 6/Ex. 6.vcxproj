@@ -144,6 +144,7 @@
     <ClCompile Include="..\Ex. 5\Funcionario.cpp" />
     <ClCompile Include="Administrativo.cpp" />
     <ClCompile Include="Ex. 6.cpp" />
+    <ClCompile Include="GestorFunc.cpp" />
     <ClCompile Include="Operario.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -151,10 +152,13 @@
     <ClInclude Include="..\Ex. 4\Pessoa.h" />
     <ClInclude Include="..\Ex. 5\Funcionario.h" />
     <ClInclude Include="Administrativo.h" />
+    <ClInclude Include="GestorFunc.h" />
     <ClInclude Include="Operario.h" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="Administrativos.txt" />
     <Text Include="Funcionarios.txt" />
+    <Text Include="Operarios.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
