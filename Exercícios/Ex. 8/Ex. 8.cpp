@@ -1,14 +1,16 @@
 #include <iostream>
+#include <clocale>
 #include "Gestor_Func.h"
 
 using namespace std;
 
-int main()
+// Ex. 8.3
+int main(int argc, char* argv[])
 {
-	// 8.3
 	ofstream ofs;
 	ifstream ifs;
 	Gestor_Func gestor;
+	setlocale(LC_ALL, "pt-PT");
 	// a)
 	ifs.open("Funcionarios.txt");
 	if (ifs.is_open())
@@ -42,4 +44,5 @@ int main()
 		cout << "Erro na leitura do ficheiro." << endl;
 		exit(-1);
 	}
+	return 0;
 }

@@ -18,9 +18,9 @@ Gestor_Func::~Gestor_Func()
 		++it;
 	}
 
-	//for (Funcionario* f : Funcs)
+	//for (auto& func : Funcs)
 	//{
-	//	delete f;
+	//	delete func;
 	//}
 	Funcs.clear();
 }
@@ -59,6 +59,7 @@ void Gestor_Func::ReadFile(ifstream& ifs)
 		}
 		F->ReadFile(ifs);
 		Funcs.push_back(F);
+		ifs >> ws;
 	}
 }
 
@@ -69,6 +70,8 @@ void Gestor_Func::ShowFunc()
 	while (it != Funcs.end())
 	{
 		(*it)->Show();
+		cout << endl;
+		++it;
 	}
 }
 
