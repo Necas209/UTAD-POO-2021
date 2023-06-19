@@ -1,37 +1,22 @@
-// Resolução do exercício 2.4
-
 #include <iostream>
 #include <fstream>
 #include <string>
 
-using namespace std;
-
-typedef struct aluno
-{
-    string nome;
-    int idade;
-    int numero;
-}Aluno;
-
-int main()
-{
-    ifstream file;
-    file.open("alunos.txt");
-    if (file.is_open())
-    {
-        Aluno tmp;
-        char delim;
-        while (!file.eof())
-        {
-            getline(file, tmp.nome, ';');
-            file >> tmp.idade >> delim;
-            file >> tmp.numero >> ws; // ws (whitespace) - manipulador de entrada para ler espa�os, mudan�as de linha, etc.
-            cout << "Nome: " << tmp.nome << endl;
-            cout << "Idade: " << tmp.idade << endl;
-            cout << "Número: " << tmp.numero << endl;
-        }
-        file.close();
-        return 0;
+int main() {
+    std::ifstream ifs{"../students.txt"};
+    if (!ifs.is_open()) {
+        std::cerr << "Error opening file" << std::endl;
+        exit(1);
     }
-    exit(1);
+    while (!ifs.eof()) {
+        std::string name;
+        int age, id;
+        char delim;
+        std::getline(ifs, name, ';');
+        ifs >> age >> delim >> id >> std::ws;
+        std::cout << "Name: " << name << std::endl;
+        std::cout << "Age: " << age << std::endl;
+        std::cout << "Id: " << id << std::endl;
+    }
+    return 0;
 }

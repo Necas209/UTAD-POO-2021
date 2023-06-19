@@ -1,31 +1,23 @@
-
-// Resolução do exercício 1.2
-
 #include <iostream>
 #include <string>
 
-using namespace std;
-
-int main()
-{
-    int num_int;
-    float num_real;
-    char ch;
-    string str;
-
-    cout << "Insira um numero inteiro: ";
-    cin >> num_int;
-    cout << "Insira um numero real: ";
-    cin >> num_real;
-    cout << "Insira um caracter: ";
-    cin >> ch;
-    cout << "Insira uma string: ";
-    getline(cin, str);
-
-    cout << "Inteiro inserido: " << num_int << endl;
-    cout << "Real inserido: " << num_real << endl;
-    cout << "Caracter inserido: " << ch << endl;
-    cout << "String inserida: " << str << endl;
-
+int main() {
+    int i;
+    float f;
+    char c;
+    std::string s;
+    std::cout << "Enter an integer: ";
+    std::cin >> i;
+    std::cout << "Enter a floating point number: ";
+    std::cin >> f;
+    std::cout << "Enter a character: ";
+    std::cin >> c;
+    std::cin.ignore();
+    std::cout << "Enter a string: ";
+    getline(std::cin, s);
+    std::cout << "Integer entered: " << i << std::endl;
+    std::cout << "Float entered: " << f << std::endl;
+    std::cout << "Character entered: " << c << std::endl;
+    std::cout << "String entered: " << s << std::endl;
     return 0;
 }

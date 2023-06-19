@@ -1,36 +1,25 @@
-
 #include <iostream>
 #include <fstream>
 
-using namespace std;
-
-int main()
-{
-    int a, b;
-    ifstream is; // objecto is para abrir o ficheiro em modo de leitura
-    ofstream os; // objecto os para abrir o ficheiro em modo de escrita
-    // para abrir o ficheiro em modo de escrita e leitura
-    // deve usar-se a class fstream
-    is.open("dados_ent.txt");
-    if (!is.is_open())
-    {
-        cout << "ERRO: não é possível abrir o ficheiro dados_ent.txt" << endl;
+int main() {
+    // Open file stream for reading and writing
+    std::ifstream ifs{"../dados_ent.txt"};
+    std::ofstream ofs{"../dados_saida.txt"};
+    // Check if files were opened correctly
+    if (!ifs.is_open()) {
+        std::cout << "Error: cannot open file dados_ent.txt" << std::endl;
         exit(1);
     }
-    os.open("dados_saida.txt");
-    if (!os.is_open())
-    {
-        cout << "ERRO: não é possível abrir o ficheiro dados_saida.txt" << endl;
+    if (!ofs.is_open()) {
+        std::cout << "Error: cannot open file dados_saida.txt" << std::endl;
         exit(1);
     }
-    is >> a >> b;
-    
-    cout << a << endl << b << endl;
-    
-    os << a * a << endl << b * b << endl;
-    is.close(); // fecha o ficheiro associado a is
-    os.close(); // fecha o ficheiro associado a os
-
+    int a = 0, b = 0;
+    ifs >> a >> b;
+    std::cout << a << std::endl;
+    std::cout << b << std::endl;
+    ofs << a * a << std::endl;
+    ofs << b * b << std::endl;
     system("pause");
     return 0;
 }

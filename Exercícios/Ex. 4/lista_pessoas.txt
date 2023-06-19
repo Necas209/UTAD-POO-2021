@@ -1,4 +1,0 @@
-Jonas Culatra;20/9/1987;Rua da direita no. 2;
-Joni Rato;29/2/1642;Elm Street;
-Jane Doe;10/10/2010;Sesame Street;
-Beto Humberto;5/7/1230;Rua Fernando Pessoa;
