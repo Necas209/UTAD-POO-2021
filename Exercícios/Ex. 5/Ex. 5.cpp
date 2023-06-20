@@ -1,105 +1,67 @@
-
-#include "Funcionario.h"
+#include "worker.h"
+#include <array>
+#include <clocale>
 #include <iostream>
-#include <string>       // std::getline
-#include <clocale>      // setlocale
+#include <string>
+#include <algorithm>
 
-using namespace std;
-
-void SortByDate(Funcionario* v);
-
-int main()
-{
+int main() {
     // 5.4
-    Funcionario F1("Joca Gaio", Data(20, 9, 1987), "Rua da direita n 2", 25023, "Pintura")
-            , F2("Ana Rola", Data(4, 2, 1990), "Rua da esquerda n 3", 25024, "Comercial");
-    // Permitir caracteres especiais
+    worker worker1("Joca Gaio", date(20, 9, 1987), "Rua da direita n 2",
+                   25023, "Pintura");
+    worker worker2("Ana Rola", date(4, 2, 1990), "Rua da esquerda n 3",
+                   25024, "Comercial");
     setlocale(LC_ALL, "");
     // 5.5
-    cout << "Funcionário 1:" << endl;
-    F1.Show();
-    cout << "Funcionário 2:" << endl;
-    F2.Show();
+    std::cout << "Worker 1:" << std::endl;
+    worker1.print();
+    std::cout << "Worker 2:" << std::endl;
+    worker2.print();
     // 5.6
-    F1.SetMorada("Rua do meio n 4");
-    F1.SetSetor("Ferragem");
+    worker1.set_address("Rua do meio n 4");
+    worker1.set_sector("Ferragem");
     // 5.7
-    Data tmp;
-    tmp = F2.GetDataN();
-    tmp.SetDia(23);
-    F2.SetDataN(tmp);
+    date birth_date = worker2.get_birth_date();
+    date new_birth_date(5, birth_date.get_month(), birth_date.get_year());
+    worker2.set_birth_date(new_birth_date);
     // 5.9
-    Funcionario F3, F4;
-    cout << "Funcionário 3:" << endl;
-    cin >> F3;
-    cout << "Funcionário 4:" << endl;
-    cin >> F4;
+    worker worker3, worker4;
+    std::cout << "Worker 3:" << std::endl;
+    //worker3.read();
+    std::cin >> worker3;
+    std::cout << "Worker 4:" << std::endl;
+    //worker4.read();
+    std::cin >> worker4;
     // 5.11
-    ofstream ofs;
-    string filename;
-    cout << "Nome do ficheiro: ";
-    getline(cin, filename);
+    std::ofstream ofs;
+    std::string filename;
+    std::cout << "Filename: ";
+    std::getline(std::cin, filename);
     ofs.open(filename);
-    if (ofs.is_open())
-    {
-        F1.SaveFile(ofs);
-        ofs << endl;
-        F2.SaveFile(ofs);
-        ofs << endl;
-        F3.SaveFile(ofs);
-        ofs << endl;
-        F4.SaveFile(ofs);
-        ofs << endl;
-        ofs.close();
-    }
-    else
-    {
-        cout << "ERRO na abertura/criação do ficheiro " << filename << endl;
+    if (!ofs.is_open()) {
+        std::cerr << "Error opening file " << filename << std::endl;
         exit(1);
     }
+    ofs << worker1 << std::endl;
+    ofs << worker2 << std::endl;
+    ofs << worker3 << std::endl;
+    ofs << worker4 << std::endl;
+    ofs.close();
     // 5.13
-    Funcionario v[4];
-    ifstream ifs;
-    
-    ifs.open(filename);
-    if (ifs.is_open())
-    {
-        for (int i = 0; i < 4; i++)
-        {
-            v[i].ReadFile(ifs);
-            ifs >> ws; // ler o '\n'
-        }
-        ifs.close();
-    }
-    else
-    {
-        cout << "ERRO na abertura do ficheiro " << filename << endl;
+    std::array<worker, 4> workers;
+    std::ifstream ifs{filename};
+    if (!ifs.is_open()) {
+        std::cerr << "Error opening file " << filename << std::endl;
         exit(1);
     }
-    
-    // 5.14
-    SortByDate(v);
-    //for (auto& f : v) 
-    //{ 
-    //    f.Show(); 
-    //}
-    for (int i = 0; i < 4; i++) 
-    { 
-        v[i].Show(); 
+    for (auto &worker: workers) {
+        ifs >> worker;
     }
-}
-
-void SortByDate(Funcionario* v)
-{
-    Funcionario temp;
-    for (int i = 0; i < 4; i++) {
-        for (int j = i + 1; j < 4; j++)
-        {
-            if (v[j].GetDataN() < v[i].GetDataN()) {
-                temp = v[i];
-                v[i] = v[j];
-                v[j] = temp;
-            }
-        }
+    // 5.14
+    std::ranges::sort(workers, [](const worker &a, const worker &b) {
+        return a.get_birth_date() < b.get_birth_date();
+    });
+    for (const auto &worker: workers) {
+        std::cout << worker << std::endl;
     }
 }

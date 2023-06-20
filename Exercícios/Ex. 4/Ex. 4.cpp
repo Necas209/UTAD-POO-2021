@@ -1,8 +1,8 @@
 #include "person.h"
-#include <iostream>
-#include <fstream>
-#include <string>
 #include <clocale>
+#include <fstream>
+#include <iostream>
+#include <string>
 #include <vector>
 
 int main() {
@@ -32,9 +32,10 @@ int main() {
     std::cin >> p3;
     // g)
     person p4;
-    cout << "person 4: " << endl;
-    cin >> p4;
-    cout << "person 4: " << p4 << endl;
+    std::cout << "person 4: " << std::endl;
+    p4.read();
+    std::cout << "person 4:" << std::endl;
+    p4.print();
     // h)
     if (p3 == p4) {
         std::cout << "p3 and p4 are the same person." << std::endl;
@@ -73,7 +74,6 @@ int main() {
         ifs >> p >> std::ws;
         people.push_back(p);
     }
-    ifs.close();
     // m)
     date prior_to_1990(1, 1, 1990);
     for (auto &p: people) {

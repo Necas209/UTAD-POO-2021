@@ -8,4 +8,5 @@ include_directories(.)
 add_executable(Ex__4
         "Ex. 4.cpp"
         person.h
+        person.cpp
         "../Ex. 3/date.h")
