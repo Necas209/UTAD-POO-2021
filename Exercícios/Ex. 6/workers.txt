@@ -1,0 +1,2 @@
+worker{employee{person{name='Jonas Culatra', birth_date=20/9/1987, address='Rua da direita n 2'}, id=25023, sector='Pintura', base_salary=1100, extra_hours=20}, works_shift=1}
+worker{employee{person{name='Luis Carlos', birth_date=1/12/1985, address='Rua Central n22'}, id=10000, sector='Ferragem', base_salary=1100, extra_hours=0}, works_shift=0}

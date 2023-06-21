@@ -26,18 +26,21 @@ std::ostream &operator<<(std::ostream &os, const person &p) {
 }
 
 std::istream &operator>>(std::istream &is, person &p) {
-    std::string input;
-    std::getline(is, input);
-    // Deserialize the input string
-    size_t nameStart = input.find("name='") + 6;
-    size_t nameEnd = input.find('\'', nameStart);
-    p.name = input.substr(nameStart, nameEnd - nameStart);
-    size_t birthDateStart = input.find("birth_date=") + 11;
-    size_t birthDateEnd = input.find(',', birthDateStart);
-    std::string bds = input.substr(birthDateStart, birthDateEnd - birthDateStart);
-    std::istringstream(bds) >> p.birth_date;
-    size_t addressStart = input.find("address='") + 9;
-    size_t addressEnd = input.find('\'', addressStart);
-    p.address = input.substr(addressStart, addressEnd - addressStart);
+    // Discard "person{" from the input stream
+    is.ignore(7);
+    // Discard "name='" from the input stream
+    is.ignore(6);
+    // Read the name
+    std::getline(is, p.name, '\'');
+    // Discard ", birth_date=" from the input stream
+    is.ignore(13);
+    // Read the birthdate
+    is >> p.birth_date;
+    // Discard ", address='" from the input stream
+    is.ignore(11);
+    // Read the address
+    std::getline(is, p.address, '\'');
+    // Discard "}" from the input stream
+    is.ignore(1);
     return is;
 }

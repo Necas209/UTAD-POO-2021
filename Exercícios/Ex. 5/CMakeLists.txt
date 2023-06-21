@@ -7,8 +7,8 @@ include_directories(.)
 
 add_executable(Ex__5
         "Ex. 5.cpp"
-        worker.cpp
-        worker.h
+        employee.cpp
+        employee.h
         "../Ex. 4/person.h"
         "../Ex. 4/person.cpp"
         "../Ex. 3/date.h")

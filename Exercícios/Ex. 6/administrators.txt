@@ -1,0 +1,1 @@
+administrator{employee{person{name='Joni Rato', birth_date=4/2/1990, address='Rua da esquerda n 3'}, id=25024, sector='Comercial', base_salary=900, extra_hours=0}}

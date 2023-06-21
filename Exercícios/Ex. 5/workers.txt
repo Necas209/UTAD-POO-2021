@@ -1,4 +1,4 @@
-worker{person=person{name='Joca Gaio', birth_date=20/9/1987, address='Rua do meio n 4'}, worker_id=25023, sector='Ferragem', base_salary=0, extra_hours=0, extra_hour_val=0}
-worker{person=person{name='Ana Rola', birth_date=5/2/1990, address='Rua da esquerda n 3'}, worker_id=25024, sector='Comercial', base_salary=0, extra_hours=0, extra_hour_val=0}
-worker{person=person{name='Diogo Medeiros', birth_date=20/11/2001, address='VR'}, worker_id=70633, sector='Eng', base_salary=2500, extra_hours=0, extra_hour_val=0}
-worker{person=person{name='Joao Rodrigues', birth_date=1/6/2001, address='Alfandega'}, worker_id=70579, sector='Consultadoria', base_salary=2200, extra_hours=5, extra_hour_val=0}
+employee{person=person{name='Joca Gaio', birth_date=20/9/1987, address='Rua do meio n 4'}, id=25023, sector='Ferragem', base_salary=0}
+employee{person=person{name='Ana Rola', birth_date=5/2/1990, address='Rua da esquerda n 3'}, id=25024, sector='Comercial', base_salary=0}
+employee{person=person{name='Diogo Medeiros', birth_date=20/11/2001, address='VR'}, id=70633, sector='Eng', base_salary=2500, extra_hours=0}
+employee{person=person{name='Joao Rodrigues', birth_date=1/6/2001, address='Alfandega'}, id=70579, sector='Consultadoria', base_salary=2200, extra_hours=5}

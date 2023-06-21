@@ -8,7 +8,7 @@
 #include <sstream>
 #include <string>
 
-class date {
+class date final {
 private:
     static const char delim = '/';
     int day;
@@ -29,6 +29,8 @@ public:
     date(int day, int month, int year)
             : day(day), month(month), year(year) {
     }
+
+    ~date() = default;
 
     [[nodiscard]] int get_day() const { return day; }
 

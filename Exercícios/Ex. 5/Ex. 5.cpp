@@ -1,4 +1,4 @@
-#include "worker.h"
+#include "employee.h"
 #include <array>
 #include <clocale>
 #include <iostream>
@@ -7,10 +7,10 @@
 
 int main() {
     // 5.4
-    worker worker1("Joca Gaio", date(20, 9, 1987), "Rua da direita n 2",
-                   25023, "Pintura");
-    worker worker2("Ana Rola", date(4, 2, 1990), "Rua da esquerda n 3",
-                   25024, "Comercial");
+    employee worker1("Joca Gaio", date(20, 9, 1987), "Rua da direita n 2",
+                     25023, "Pintura");
+    employee worker2("Ana Rola", date(4, 2, 1990), "Rua da esquerda n 3",
+                     25024, "Comercial");
     setlocale(LC_ALL, "");
     // 5.5
     std::cout << "Worker 1:" << std::endl;
@@ -25,7 +25,7 @@ int main() {
     date new_birth_date(5, birth_date.get_month(), birth_date.get_year());
     worker2.set_birth_date(new_birth_date);
     // 5.9
-    worker worker3, worker4;
+    employee worker3, worker4;
     std::cout << "Worker 3:" << std::endl;
     //worker3.read();
     std::cin >> worker3;
@@ -48,7 +48,7 @@ int main() {
     ofs << worker4 << std::endl;
     ofs.close();
     // 5.13
-    std::array<worker, 4> workers;
+    std::array<employee, 4> workers;
     std::ifstream ifs{filename};
     if (!ifs.is_open()) {
         std::cerr << "Error opening file " << filename << std::endl;
@@ -58,7 +58,7 @@ int main() {
         ifs >> worker;
     }
     // 5.14
-    std::ranges::sort(workers, [](const worker &a, const worker &b) {
+    std::ranges::sort(workers, [](const employee &a, const employee &b) {
         return a.get_birth_date() < b.get_birth_date();
     });
     for (const auto &worker: workers) {

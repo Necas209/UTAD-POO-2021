@@ -17,6 +17,8 @@ public:
     person(std::string name, date birth_date, std::string address)
             : name(std::move(name)), birth_date(birth_date), address(std::move(address)) {}
 
+    virtual ~person() = default;
+
     void set_name(std::string _name) { name = std::move(_name); }
 
     void set_birth_date(date _birth_date) { birth_date = _birth_date; }
