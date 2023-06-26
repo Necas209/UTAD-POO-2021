@@ -1,5 +1,5 @@
-#ifndef DATA_H
-#define DATA_H
+#ifndef DATE_H
+#define DATE_H
 
 #include <chrono>
 #include <ctime>
@@ -7,6 +7,12 @@
 #include <fstream>
 #include <sstream>
 #include <string>
+
+void get_localtime(tm &ltm) {
+    auto now = std::chrono::system_clock::now();
+    auto now_c = std::chrono::system_clock::to_time_t(now);
+    localtime_s(&ltm, &now_c);
+}
 
 class date final {
 private:
@@ -17,10 +23,8 @@ private:
 public:
     date() {
         // Get current date
-        auto now = std::chrono::system_clock::now();
-        auto now_c = std::chrono::system_clock::to_time_t(now);
         tm ltm{};
-        localtime_s(&ltm, &now_c);
+        get_localtime(ltm);
         day = ltm.tm_mday;
         month = 1 + ltm.tm_mon;
         year = 1900 + ltm.tm_year;
@@ -87,4 +91,4 @@ public:
     }
 };
 
-#endif // DATA_H
+#endif // DATE_H
